@@ -7,14 +7,16 @@ body{
     align-items: center;
     min-height: 100vh;
 }
-button,p{
+button{
     margin: 10px;
     font-size: 2rem;
+    
 
 }
 .kartlar{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .kart-sorulari{
     display: flex;
@@ -22,9 +24,12 @@ button,p{
     gap: 20px;
     justify-content: center;
     align-items: center;
+    font-size: 2rem;
+    padding: 1rem;
+
 }
 .kart {
-    width: 200px;
+    flex: 0 0 200px;
     height: 300px;
     border: 1px solid black;
     margin: 10px;
@@ -48,5 +53,9 @@ button,p{
   
   .kart.yanlis {
     background-color: red;
+  }
+
+  body>div{
+    font-size: 2rem;
   }
   
