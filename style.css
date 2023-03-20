@@ -1,0 +1,52 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+button,p{
+    margin: 10px;
+    font-size: 2rem;
+
+}
+.kartlar{
+    display: flex;
+    flex-wrap: wrap;
+}
+.kart-sorulari{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.kart {
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .kart img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+  
+  .kart.cevap {
+    background-color: green;
+  }
+  
+  .kart.yanlis {
+    background-color: red;
+  }
+  
