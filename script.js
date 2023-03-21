@@ -123,8 +123,10 @@
     kart.remove();
     });
     const sonucDiv = document.createElement("div");
-    const sonucResim=document.createElement("img");
     sonucDiv.classList.add("sonuc");
+    const sonucResim=document.createElement("img");
+    sonucResim.classList.add("sonucResim");
+
     if (puan >= 80) {
     sonucDiv.innerText = "Tebrikler! Taraftarlık seviyeniz Rambo Okan.";
     sonucResim.src="rambo.jpg";
@@ -138,8 +140,10 @@
     const govde = document.querySelector("body");
     govde.appendChild(sonucDiv);
     govde.appendChild(sonucResim);
+
     }
-    
+
     futbolcular.forEach((futbolcu) => {
     kartOlustur(futbolcu);
     });
+

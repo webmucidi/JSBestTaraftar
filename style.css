@@ -55,7 +55,15 @@ button{
     background-color: red;
   }
 
-  body>div{
+  .sonuc{
     font-size: 2rem;
+    margin-bottom: 1rem;
   }
+
+  .sonucResim{
+    width: 250px;
+  }
+
+
+
   
