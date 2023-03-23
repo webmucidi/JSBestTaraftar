@@ -1,14 +1,14 @@
  const futbolcular = [
-    { isim: "Lionel Messi", yas: 34, golSayisi: 782, maas: 71, kirmiziKartSayisi: 3,resim: "messi.jpg",kariyerMacSayisi: 900 },
-    { isim: "Cristiano Ronaldo", yas: 37, golSayisi: 793, maas: 62, kirmiziKartSayisi: 11,resim: "ronaldo.jpg" ,kariyerMacSayisi: 900},
-    { isim: "Neymar Jr.", yas: 29, golSayisi: 256, maas: 41, kirmiziKartSayisi: 4 ,resim: "neymar.jpg",kariyerMacSayisi: 900},
-    { isim: "Robert Lewandowski", yas: 33, golSayisi: 327, maas: 25, kirmiziKartSayisi: 2,resim: "lewa.jpg",kariyerMacSayisi: 900 },
-    { isim: "Kevin De Bruyne", yas: 30, golSayisi: 86, maas: 20, kirmiziKartSayisi: 1 ,resim: "debruyne.jpg",kariyerMacSayisi: 900},
-    { isim: "Kylian Mbappé", yas: 23, golSayisi: 139, maas: 27, kirmiziKartSayisi: 1,resim: "mbappe.jpg",kariyerMacSayisi: 900 },
-    { isim: "Mohamed Salah", yas: 29, golSayisi: 153, maas: 20, kirmiziKartSayisi: 0 ,resim: "salah.jpg",kariyerMacSayisi: 900},
-    { isim: "Virgil van Dijk", yas: 30, golSayisi: 22, maas: 15, kirmiziKartSayisi: 1 ,resim: "virgil.jpg",kariyerMacSayisi: 900},
-    { isim: "Jan Oblak", yas: 29, golSayisi: 0, maas: 12, kirmiziKartSayisi: 0,resim: "oblak.jpg",kariyerMacSayisi: 900},
-    { isim: "Luka Modric", yas: 36, golSayisi: 68, maas: 10, kirmiziKartSayisi: 1 ,resim: "modric.jpg",kariyerMacSayisi: 900},
+    { isim: "Lionel Messi", yas: 34, golSayisi: 782, maas: 71, kirmiziKartSayisi: 3,resim: "images/messi.jpg",kariyerMacSayisi: 900 },
+    { isim: "Cristiano Ronaldo", yas: 37, golSayisi: 793, maas: 62, kirmiziKartSayisi: 11,resim: "images/ronaldo.jpg" ,kariyerMacSayisi: 900},
+    { isim: "Neymar Jr.", yas: 29, golSayisi: 256, maas: 41, kirmiziKartSayisi: 4 ,resim: "images/neymar.jpg",kariyerMacSayisi: 900},
+    { isim: "Robert Lewandowski", yas: 33, golSayisi: 327, maas: 25, kirmiziKartSayisi: 2,resim: "images/lewa.jpg",kariyerMacSayisi: 900 },
+    { isim: "Kevin De Bruyne", yas: 30, golSayisi: 86, maas: 20, kirmiziKartSayisi: 1 ,resim: "images/debruyne.jpg",kariyerMacSayisi: 900},
+    { isim: "Kylian Mbappé", yas: 23, golSayisi: 139, maas: 27, kirmiziKartSayisi: 1,resim: "images/mbappe.jpg",kariyerMacSayisi: 900 },
+    { isim: "Mohamed Salah", yas: 29, golSayisi: 153, maas: 20, kirmiziKartSayisi: 0 ,resim: "images/salah.jpg",kariyerMacSayisi: 900},
+    { isim: "Virgil van Dijk", yas: 30, golSayisi: 22, maas: 15, kirmiziKartSayisi: 1 ,resim: "images/virgil.jpg",kariyerMacSayisi: 900},
+    { isim: "Jan Oblak", yas: 29, golSayisi: 0, maas: 12, kirmiziKartSayisi: 0,resim: "images/oblak.jpg",kariyerMacSayisi: 900},
+    { isim: "Luka Modric", yas: 36, golSayisi: 68, maas: 10, kirmiziKartSayisi: 1 ,resim: "images/modric.jpg",kariyerMacSayisi: 900},
   ];
   
   const kartlarDiv = document.querySelector(".kartlar");
@@ -129,13 +129,13 @@
 
     if (puan >= 80) {
     sonucDiv.innerText = "Tebrikler! Taraftarlık seviyeniz Rambo Okan.";
-    sonucResim.src="rambo.jpg";
+    sonucResim.src="images/rambo.jpg";
     } else if (puan >= 50) {
     sonucDiv.innerText = "Netflix yerine daha çok futbol izlemelisiniz.";
-    sonucResim.src="netflix.jpg";
+    sonucResim.src="images/netflix.jpg";
     } else {
     sonucDiv.innerText = "Futbolla alaka seviyeniz Kerimcan Durmaz.";
-    sonucResim.src="kerimcan.jpg";
+    sonucResim.src="images/kerimcan.jpg";
     }
     const govde = document.querySelector("body");
     govde.appendChild(sonucDiv);
