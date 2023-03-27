@@ -63,6 +63,12 @@ button{
   .sonucResim{
     width: 250px;
   }
+  .gizli{
+    display: none;
+  }
+  .acik{
+    display: block;
+  }
 
 
 

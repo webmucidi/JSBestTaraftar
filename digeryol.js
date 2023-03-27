@@ -15,8 +15,15 @@ const futbolcular={
   
 
   let secilenFutbolcu = null;
-  let soru,secenekler,dogruCevap,kullaniciCevap,bilgiler,secilenKart;
+  let secilenKart=null;
+  let soru,secenekler,dogruCevap,kullaniciCevap,bilgiler;
   let puan=0;
+  let hak=0;
+
+  //Sonuç ekranında kullanılacak nesneler tanımlanıp değişkene aktarıldı.
+  const yenidenButon=document.createElement("button");
+  const sonucDiv = document.createElement("div");
+  const sonucResim=document.createElement("img");
 
   const futbolcuFotolari=document.getElementsByTagName("img");
 [...futbolcuFotolari].forEach((futbolcuFoto,index) => {
@@ -25,17 +32,30 @@ const futbolcular={
     //Seçilen futbolcuya ait divi belirleyelim
     secilenKart=futbolcuFoto.parentNode;
 
-    soruyuGoster(secilenFutbolcu);
+
+    //Soruyu göstermeden önce daha önce cevap hakkını kullanmış mı bakıyoruz!
+    if (secilenKart.classList.contains("cevap") || secilenKart.classList.contains("yanlis")) {
+      alert("Yalnızca 1 kez soru seçme ve cevaplama hakkınız var! Başka kart seçiniz.");
+              //Uyarıyı yapıp cevap seçeneklerini ekrandan kaldırıyoruz.
+              const silinecekler=document.getElementsByTagName("button");
+              [...silinecekler].forEach((silinecek)=>{
+                  silinecek.remove();
+              });
+    }
+    else{
+      soruyuGoster(secilenFutbolcu);
+    }
+    
   });
 });
 
 function soruyuGoster(secilenFutbolcu){
 
-    //Öncelikle daha önceki sorudan kalan seçenekler varsa temizleyelim
-    const silinecekler=document.getElementsByTagName("button");
-    [...silinecekler].forEach((silinecek)=>{
-        silinecek.remove();
-    });
+        //Öncelikle daha önceki sorudan kalan seçenekler varsa temizleyelim
+        const silinecekler=document.getElementsByTagName("button");
+        [...silinecekler].forEach((silinecek)=>{
+            silinecek.remove();
+        });
  
     bilgiler=futbolcular[secilenFutbolcu];
     
@@ -55,33 +75,108 @@ function soruyuGoster(secilenFutbolcu){
     });
 }
 
+
+
 function cevabiKontrolEt(){
 
+  //Her cevap kontrolü 1 hakkımızdan götürüyor,maks 10 hakkımız dolana kadar devam ediyor.
+    hak++;
+    if(hak<=10){
+      kullaniciCevap=this.innerHTML;
+      
+      console.log(kullaniciCevap,dogruCevap);
+
+      if(kullaniciCevap==dogruCevap){
+        alert("Tebrikler. Doğru cevap.");
+        //Cevaba göre kırmızı/yeşil renklendirme
+        secilenKart.classList.remove("yanlis");
+        secilenKart.classList.add("cevap");
+
+        //Doğru cevap için 10 puan ekleme
+          puan+=10;
+      }
+      else{
+        alert("Yanlış cevap!!!");
+        //Cevaba göre kırmızı/yeşil renklendirme
+        secilenKart.classList.remove("cevap");
+        secilenKart.classList.add("yanlis");
+      }
+
+    console.log(puan,hak);
+  }
+  else{
     
-    kullaniciCevap=this.innerHTML;
-    
-    console.log(kullaniciCevap,dogruCevap);
+        //10 hakkımız dolduktan sonra kartları,soruyu ve cevap butonlarını gizliyoruz.
+        const gizlenecekler=document.getElementsByClassName("kart");
+        
+        [...gizlenecekler].forEach((gizlenecek)=>{
+          gizlenecek.classList.remove("acik");
+            gizlenecek.classList.add("gizli");
+        });
 
-    if(kullaniciCevap==dogruCevap){
-      alert("Tebrikler. Doğru cevap.");
-      //Cevaba göre kırmızı/yeşil renklendirme
-      secilenKart.classList.remove("yanlis");
-      secilenKart.classList.add("cevap");
+    const silinecekler=document.getElementsByTagName("button");
+    [...silinecekler].forEach((silinecek)=>{
+        silinecek.remove();
+    });
 
-      //Doğru cevap için 10 puan ekleme
-        puan+=10;
+    document.getElementById("soruBaslik").classList.add("gizli");
+
+
+    //Sonuçları göstermek için yeni div oluşturup puana göre resim ve mesaj gösteriyoruz.
+ 
+    sonucDiv.classList.add("sonuc");
+   
+    sonucResim.classList.add("sonucResim");
+    const govde = document.querySelector("body");
+    govde.appendChild(sonucDiv);
+    govde.appendChild(sonucResim);
+
+    if (puan >= 80) {
+    sonucDiv.innerText = "Tebrikler! Taraftarlık seviyeniz Rambo Okan.";
+    sonucResim.src="images/rambo.jpg";
+    } else if (puan >= 50) {
+    sonucDiv.innerText = "Netflix yerine daha çok futbol izlemelisiniz.";
+    sonucResim.src="images/netflix.jpg";
+    } else {
+    sonucDiv.innerText = "Futbolla alaka seviyeniz Kerimcan Durmaz.";
+    sonucResim.src="images/kerimcan.jpg";
     }
-    else{
-      alert("Yanlış cevap!!!");
-      //Cevaba göre kırmızı/yeşil renklendirme
-      secilenKart.classList.remove("cevap");
-      secilenKart.classList.add("yanlis");
-    }
 
-    console.log(puan)
 
+
+    //Yukarıda global oluşturduğumuz yeniden oyna butonunu ilgi fn.a yönlendiriyoruz.
+    yenidenButon.innerHTML="Yeniden Oyna";
+    document.getElementById("kart-sorulari").appendChild(yenidenButon);
+    yenidenButon.addEventListener("click",yenidenOyna);
 
   }
 
+  }
+
+/*
+  Yeniden oynatmadan önce eski sonuçları sildik,puan ve hakları sıfırladık,
+  oyun bitince gizlediğimiz soru kartlarını görünür hale getirdik.
+*/
+  function yenidenOyna(){
+
+    sonucDiv.remove();
+    sonucResim.remove();
+
+    hak=0;
+    puan=0;
+
+
+    const gizlenenler=document.getElementsByClassName("gizli");
+    
+    [...gizlenenler].forEach((gizlenen)=>{
+        gizlenen.classList.remove("gizli");
+        gizlenen.classList.remove("cevap");
+        gizlenen.classList.remove("yanlis");
+        gizlenen.classList.add("acik");
+
+    });
+    
+    yenidenButon.remove();
+  }
+
   
-    //Sonuçları değerlendirme ve oyunun bitişi
