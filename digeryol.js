@@ -32,7 +32,6 @@ const futbolcular={
     //Seçilen futbolcuya ait divi belirleyelim
     secilenKart=futbolcuFoto.parentNode;
 
-
     //Soruyu göstermeden önce daha önce cevap hakkını kullanmış mı bakıyoruz!
     if (secilenKart.classList.contains("cevap") || secilenKart.classList.contains("yanlis")) {
       alert("Yalnızca 1 kez soru seçme ve cevaplama hakkınız var! Başka kart seçiniz.");
@@ -102,7 +101,7 @@ function cevabiKontrolEt(){
         secilenKart.classList.add("yanlis");
       }
 
-    console.log(puan,hak);
+    
   }
   else{
     
