@@ -82,7 +82,7 @@ function cevabiKontrolEt(){
     if(hak<=10){
       kullaniciCevap=this.innerHTML;
       
-      console.log(kullaniciCevap,dogruCevap);
+      //console.log(kullaniciCevap,dogruCevap);
 
       if(kullaniciCevap==dogruCevap){
         alert("Tebrikler. Doğru cevap.");
@@ -118,7 +118,7 @@ function cevabiKontrolEt(){
     document.getElementById("soruBaslik").classList.add("gizli");
 
 
-    //Sonuçları göstermek için yeni div oluşturup puana göre resim ve mesaj gösteriyoruz.
+    //Ssonuçları göstermek için yeni div oluşturup puana göre resim ve mesaj gösteriyoruz.
  
     sonucDiv.classList.add("sonuc");
    
