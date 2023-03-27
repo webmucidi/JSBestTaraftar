@@ -61,8 +61,7 @@ function soruyuGoster(secilenFutbolcu){
     soru=bilgiler['soru'];
     secenekler=[bilgiler['golSayisi'],bilgiler['golSayisi']+Math.floor(Math.random()*3+1)];
     dogruCevap=bilgiler.golSayisi;
-    //console.log(bilgiler);
-    
+   
     document.getElementById("soruBaslik").textContent = soru;
 
     secenekler.forEach((secenek)=>{
@@ -100,8 +99,6 @@ function cevabiKontrolEt(){
         secilenKart.classList.remove("cevap");
         secilenKart.classList.add("yanlis");
       }
-
-    
   }
   else{
     
