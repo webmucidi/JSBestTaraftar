@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbolcu Ekleme Formu</title>
+</head>
+<body>
+    <form action="" id="futbolcu">
+        <label for="txtAdSoyad">Ad-Soyad giriniz:</label>
+        <input type="text" id="txtAdSoyad" class="block w-2/4 form-input">
+        <label for="txtMevki">Mevkisini yazınız:</label>
+        <textarea id="txtMevki" cols="30" rows="5" class="w-2/4 form-textarea"></textarea>
+        <input type="submit" value="Sunuya Gönder" id="btnGonder" class="btn" onclick="postJSON()">
+    </form>
+<script src="ekle.js"></script>
+</body>
+</html>

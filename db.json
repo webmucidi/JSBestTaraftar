@@ -1,0 +1,14 @@
+{
+  "futbolcular": [
+    {
+      "id": 1,
+      "ad": "Arda Güler",
+      "mevki": "Oyun kurucu"
+    },
+    {
+      "ad": "Ferdi Kadıoğlu",
+      "mevki": "Kanat",
+      "id": 2
+    }
+  ]
+}
