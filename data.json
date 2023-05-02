@@ -1,0 +1,26 @@
+{
+  "futbolcular": [
+    {
+      "id": 1,
+      "ad": "Messi",
+      "yas": 35,
+      "gol": 785,
+      "maas": 250,
+      "kirmizi": 5,
+      "sari": 22,
+      "mac": 981,
+      "foto": "images/messi.jpg"
+    },
+    {
+      "ad": "Fatih",
+      "yas": "17",
+      "gol": "250",
+      "maas": "3",
+      "kirmizi": "8",
+      "sari": "32",
+      "mac": "500",
+      "foto": "C:\\fakepath\\abus.jpg",
+      "id": 2
+    }
+  ]
+}
