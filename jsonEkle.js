@@ -21,7 +21,7 @@ async function verileriKaydet(e){
     let futbolcuKirmizi=txtKirmizi.value;
     let futbolcuSari=txtSari.value;
     let futbolcuMac=txtMac.value;
-    let futbolcuFoto=fileFoto.value;
+    let futbolcuFoto=fileFoto.files[0].name;
 
     const sunucuYaniti=await fetch('http://localhost:3000/futbolcular',{
       method:'POST',
@@ -36,7 +36,7 @@ async function verileriKaydet(e){
         kirmizi:futbolcuKirmizi ,
         sari: futbolcuSari,
         mac:futbolcuMac,
-        foto:futbolcuFoto
+        foto:"images/"+futbolcuFoto
       })
     
     });

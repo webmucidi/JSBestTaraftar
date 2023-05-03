@@ -21,6 +21,17 @@
       "mac": "500",
       "foto": "C:\\fakepath\\abus.jpg",
       "id": 2
+    },
+    {
+      "ad": "Arda",
+      "yas": "Güler",
+      "gol": "10",
+      "maas": "1",
+      "kirmizi": "0",
+      "sari": "2",
+      "mac": "20",
+      "foto": "images/arda.jpg",
+      "id": 3
     }
   ]
 }
